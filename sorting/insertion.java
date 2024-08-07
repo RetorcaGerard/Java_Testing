@@ -12,22 +12,18 @@ public class insertion {
             String[]elements = input.split(",");
             int n = elements.length;
             int[]arr = new int[n];
-
              
             for (int i = 0; i < n; i++) {
                 arr[i] = Integer.parseInt(elements[i].trim());
             }
-
              
             for (int i = 1 ; i < n ; i++){
                 int key = arr[i];
                 int j = i - 1;
-
                 
                 while (j >=0 && arr [j]>key){
                     arr [j+1] = arr [j];
                     j--;
-                    
                 }
 
                 arr[j+1] = key;
@@ -42,11 +38,13 @@ public class insertion {
 
             System.out.println("Do you want to do bubble sort again? Y/N");
             String pick = ins.nextLine();
+             
             if (pick.equals("Y")){
                 continue;
-            }else if (pick.equals("N")){
+            } else if (pick.equals("N")){
                 ins.close();
                 return;
+                
             }
          }
     }
