@@ -4,7 +4,6 @@ public class bubble {
 
     public static void main(String[] args) {
         Scanner bub = new Scanner(System.in);
-
         
          while(true){
             System.out.println("Enter the elements (Put comma ',' between each elements: )");
@@ -12,12 +11,10 @@ public class bubble {
             String[]elements = input.split(",");
             int n = elements.length;
             int[]arr = new int[n];
-
              
             for (int i = 0; i < n; i++) {
                 arr[i] = Integer.parseInt(elements[i].trim());
             }
-
              
             boolean sorted = false;
             int pass = 0;
@@ -44,9 +41,10 @@ public class bubble {
 
             System.out.println("Do you want to do bubble sort again? Y/N");
             String pick = bub.nextLine();
+             
             if (pick.equals("Y")){
                 continue;
-            }else if (pick.equals("N")){
+            } else if (pick.equals("N")){
                 bub.close();
                 return;
             }
