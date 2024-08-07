@@ -1,7 +1,10 @@
 import java.util.*;
+
 public class selection {
+    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
          while(true){
             System.out.println("Enter the elements (Put comma ',' between each elements: )");
             String input = sc.nextLine();
@@ -29,6 +32,7 @@ public class selection {
                 for ( int k = 0 ; k < n ; k++){
                     System.out.print(arr [k]+ " ");
                 }
+                
                 System.out.println();
             }
 
@@ -36,7 +40,7 @@ public class selection {
             String pick = sc.nextLine();
             if (pick.equals("Y")){
                 continue;
-            }else if (pick.equals("N")){
+            } else if (pick.equals("N")){
                 sc.close();
                 return;
             }
