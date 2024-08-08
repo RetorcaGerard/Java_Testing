@@ -1,5 +1,14 @@
 import java.util.*;
 
+
+//I am trying to put the sorting codes to abstract code while on loop.
+//*It would be nice to use seperate files for inputing codes
+//in abstract and output result in other file so that
+//when it comes to debugging, we're not gonna have trouble
+//finding the cause of bugs.
+
+
+
 abstract class sort {
     public abstract void insertion();
     public abstract void selection();
@@ -9,6 +18,8 @@ abstract class sort {
 class sot extends sort {
     Scanner sc = new Scanner(System.in);
 
+    // for Bubble sort coding
+    
     public void bubble(){
 
         while(true){
@@ -49,12 +60,14 @@ class sot extends sort {
             String pick = sc.nextLine();
             if (pick.equals("Y")){
                 continue;
-            }else if (pick.equals("N")){
+            } else if (pick.equals("N")){
                 return;
             }
         }
     }
 
+    //for Insertion sort Coding
+    
     public void insertion(){
         while(true){
             System.out.println("Enter the elements (Put comma ',' between each elements: )");
@@ -95,6 +108,8 @@ class sot extends sort {
          }
     }
 
+    //For selection sort coding
+    
     public void selection(){
         while(true){
             System.out.println("Enter the elements [Put comma(,) between each elements:]");
@@ -137,9 +152,10 @@ class sot extends sort {
     }
 }
 
-
+// here, we creating our public class of the file which is the input.
 public class sorts {
     public static void main(String[] args) {
+
         Scanner options = new Scanner(System.in);
 
         sot source = new sot();
