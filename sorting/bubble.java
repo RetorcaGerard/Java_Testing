@@ -1,54 +1,56 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class bubble {
 
     public static void main(String[] args) {
-        Scanner bub = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         
-         while(true){
-            System.out.println("Enter the elements (Put comma ',' between each elements: )");
-            String input = bub.nextLine();
-            String[]elements = input.split(",");
-            int n = elements.length;
-            int[]arr = new int[n];
-             
-            for (int i = 0; i < n; i++) {
-                arr[i] = Integer.parseInt(elements[i].trim());
-            }
-             
-            boolean sorted = false;
-            int pass = 0;
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+        
+        int[] array = new int[n];
+        
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            array[i] = scanner.nextInt();
+        }
 
-            while(!sorted) {
-                sorted = true;
-                for (int i = 0 ; i < n - 1 - pass; i++) {
-                    if (arr [i] > arr [i+1]){
-                        int temp = arr [i];
-                        arr [i] = arr [i+1];
-                        arr [i+1] = temp;
-                        sorted = false;
-                    }
-                }
-                
-                pass++;
-
-                System.out.print("Loop "+ pass + ": ");
-                for ( int i = 0 ; i < n ; i++){
-                    System.out.print(arr [i]+ " ");
-                }
-                System.out.println();
-            }
-
-            System.out.println("Do you want to do bubble sort again? Y/N");
-            String pick = bub.nextLine();
-             
-            if (pick.equals("Y")){
-                continue;
-            } else if (pick.equals("N")){
-                bub.close();
-                return;
-            }
-         }
+        System.out.println("\nInputed array:");
+        printArray(array);
+        
+        bubbleSort(array);
+        
+        System.out.println("\nSorted array:");
+        printArray(array);
+        
+        scanner.close();
     }
     
+    public static void bubbleSort(int[] array) {
+        int n = array.length;
+        boolean swapped;
+        for (int i = 0; i < n - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < n - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            System.out.println("\nArray after pass " + (i + 1) + ":");
+            printArray(array);
+            if (!swapped) {
+                break;
+            }
+        }
+    }
+    
+    public static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
+    }
 }
