@@ -14,9 +14,6 @@ public class bubble {
         for (int i = 0; i < n; i++) {
             array[i] = scanner.nextInt();
         }
-
-        System.out.println("\nInputed array:");
-        printArray(array);
         
         bubbleSort(array);
         
