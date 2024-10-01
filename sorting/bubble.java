@@ -15,7 +15,7 @@ public class bubble {
             array[i] = scanner.nextInt();
         }
         
-        bubbleSort(array);
+        bubble(array);
         
         System.out.println("\nSorted array:");
         printArray(array);
@@ -23,7 +23,7 @@ public class bubble {
         scanner.close();
     }
     
-    public static void bubbleSort(int[] array) {
+    public static void bubble(int[] array) {
         int n = array.length;
         boolean swapped;
         for (int i = 0; i < n - 1; i++) {
