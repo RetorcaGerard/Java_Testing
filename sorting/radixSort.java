@@ -15,7 +15,7 @@ public class radixSort {
         return max;
     }
 
-    static void countingSort(int[] arr, int exp) {
+    static void counting(int[] arr, int exp) {
 
         int n = arr.length;
         int[] output = new int[n];
@@ -44,27 +44,26 @@ public class radixSort {
 
         int max = getMax(arr);
         for (int exp = 1; max / exp > 0; exp *= 10) {
-            countingSort(arr, exp);
+            counting(arr, exp);
             System.out.println("After sorting on " + exp + ": " + Arrays.toString(arr));
         }
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the number of elements:");
-        int n = scanner.nextInt();
+        int n = sc.nextInt();
 
         int[] arr = new int[n];
 
         System.out.println("Enter the elements:");
         for (int i = 0; i < n; i++) {
-            arr[i] = scanner.nextInt();
+            arr[i] = sc.nextInt();
 
-            
         }
         radix(arr);
-        scanner.close();
+        sc.close();
     }
     
     
